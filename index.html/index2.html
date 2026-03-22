@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Developer for Hire | Dheer</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 20% 20%, #1e293b, #020617);
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 80px 20px;
+    }
+
+    h1 {
+      font-size: 48px;
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .tagline {
+      margin-top: 10px;
+      font-size: 18px;
+      color: #38bdf8;
+      opacity: 0.9;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.08);
+      transform: translateY(40px) scale(0.98);
+      opacity: 0;
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    section.show {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+      font-weight: 600;
+      color: #f8fafc;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .skills span {
+      padding: 10px 16px;
+      margin: 6px;
+      border-radius: 999px;
+      background: rgba(56,189,248,0.15);
+      border: 1px solid rgba(56,189,248,0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .skills span:hover {
+      transform: scale(1.1);
+      background: rgba(56,189,248,0.3);
+    }
+
+    .project {
+      padding: 18px;
+      margin-top: 12px;
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: all 0.4s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    /* iOS-style smooth blur navbar (future ready) */
+    .glass {
+      backdrop-filter: blur(25px);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 34px; }
+      section { padding: 25px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Web Developer for Hire</h1>
+  <p class="tagline"></p>
+</header>
+
+<section>
+  <h2>About Me</h2>
+  <p>I am Dheer, a passionate web developer who has completed a web development course. I am currently learning Artificial Intelligence and Ethical Hacking. I build clean, modern, and responsive websites.</p>
+</section>
+
+<section>
+  <h2>Skills</h2>
+  <div class="skills">
+    <span>HTML</span>
+    <span>CSS</span>
+    <span>JavaScript</span>
+    <span>WordPress</span>
+    <span>AI Basics</span>
+    <span>Ethical Hacking</span>
+  </div>
+</section>
+
+<section>
+  <h2>Projects</h2>
+  <div class="project">
+    <h3>Portfolio Website</h3>
+    <p>Modern personal portfolio with responsive design.</p>
+  </div>
+  <div class="project">
+    <h3>Landing Page</h3>
+    <p>High-converting responsive landing page.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p><strong>Phone:</strong> 7576001867</p>
+  <p><strong>Email:</strong> dheerbhuyan007@gmail.com</p>
+</section>
+
+<footer>
+  <p>© 2026 Dheer | Web Developer for Hire</p>
+</footer>
+
+<script>
+  // Smooth iOS-like typing animation
+  const text = "Dheer • Web Developer • AI Learner • Ethical Hacking Enthusiast";
+  let i = 0;
+  const speed = 40;
+  const tagline = document.querySelector('.tagline');
+
+  function type() {
+    if (i < text.length) {
+      tagline.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(type, speed);
+    }
+  }
+  type();
+
+  // Smooth reveal (iOS-like easing)
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(sec => observer.observe(sec));
+
+  // Subtle parallax effect
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    document.body.style.backgroundPosition = `center ${scrollY * 0.2}px`;
+  });
+</script>
+
+</body>
+</html>
